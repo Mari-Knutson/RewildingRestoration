@@ -5,13 +5,19 @@ import { ArrowDown } from 'lucide-react';
 export default function Hero() {
     return (
         <div className="relative h-screen w-full overflow-hidden bg-nature-dark text-nature-light">
-            {/* Background Image Placeholder - Replace with actual image */}
+            {/* Video Background */}
             <div className="absolute inset-0 bg-nature-dark/80">
-                <img
-                    src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2074&auto=format&fit=crop"
-                    alt="Forest Background"
-                    className="h-full w-full object-cover opacity-40"
-                />
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="h-full w-full object-cover opacity-60"
+                >
+                    <source src="/RewildingRestoration/hero-video.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+                <div className="absolute inset-0 bg-black/30" /> {/* Overlay for text readability */}
             </div>
 
             <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">

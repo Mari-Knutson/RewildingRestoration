@@ -2,9 +2,12 @@ import React from 'react';
 import Hero from './components/Hero';
 import Projects from './components/Projects';
 
+import Navbar from './components/Navbar';
+
 function App() {
   return (
     <div className="min-h-screen bg-nature-light">
+      <Navbar />
       <Hero />
       <Projects />
 

@@ -8,11 +8,11 @@ export default {
         extend: {
             colors: {
                 nature: {
-                    dark: '#1a2e1a', // Forest green
-                    light: '#f4f1ea', // Cream/Clay
-                    accent: '#c94c4c', // Berry
-                    moss: '#5c7a4d',
-                    stone: '#8c8c8c',
+                    dark: '#1a3c34',    // Deep forest green (Mossy Earth primary)
+                    light: '#f4f1ea',   // Cream/Off-white background
+                    accent: '#c2410c',  // Burnt orange/berry accent
+                    moss: '#4d7c0f',    // Vibrant moss green
+                    stone: '#44403c',   // Warm grey
                 }
             },
             fontFamily: {
