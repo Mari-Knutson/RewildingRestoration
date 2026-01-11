@@ -16,11 +16,12 @@ export default function Navbar() {
     }, []);
 
     const links = [
-        { name: 'Projects', href: '#projects' },
-        { name: 'About', href: '#about' },
-        { name: 'Journal', href: '#journal' },
-        { name: 'Contact', href: '#contact' },
+        { name: 'Projects', href: '/RewildingRestoration/projects' },
+        { name: 'About', href: '/RewildingRestoration/about' },
+        { name: 'Contact', href: '/RewildingRestoration/contact' },
     ];
+    // Removed Journal as requested
+
 
     return (
         <nav
@@ -37,20 +38,20 @@ export default function Navbar() {
                 {/* Desktop Menu */}
                 <div className="hidden md:flex items-center gap-8">
                     {links.map((link) => (
-                        <a
+                        <Link
                             key={link.name}
-                            href={link.href}
+                            to={link.href}
                             className="text-sm uppercase tracking-widest text-nature-light hover:text-nature-accent transition-colors"
                         >
                             {link.name}
-                        </a>
+                        </Link>
                     ))}
-                    <a
-                        href="#join"
+                    <Link
+                        to="/RewildingRestoration/join"
                         className="rounded-full bg-nature-moss px-6 py-2 text-sm font-bold uppercase tracking-wide text-white transition-transform hover:scale-105 hover:bg-nature-accent"
                     >
                         Join
-                    </a>
+                    </Link>
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -71,15 +72,18 @@ export default function Navbar() {
                 >
                     <div className="flex flex-col gap-6 text-center">
                         {links.map((link) => (
-                            <a
+                            <Link
                                 key={link.name}
-                                href={link.href}
+                                to={link.href}
                                 onClick={() => setIsOpen(false)}
                                 className="text-lg text-nature-light hover:text-nature-accent"
                             >
                                 {link.name}
-                            </a>
+                            </Link>
                         ))}
+                        <Link to="/RewildingRestoration/join" onClick={() => setIsOpen(false)} className="text-lg text-nature-light hover:text-nature-accent">
+                            Join
+                        </Link>
                     </div>
                 </motion.div>
             )}
