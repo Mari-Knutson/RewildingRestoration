@@ -6,6 +6,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Join from './pages/Join';
 import ProjectsPage from './pages/Projects';
+import ProjectDetail from './pages/ProjectDetail';
 
 function Home() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Routes>
         <Route path="/RewildingRestoration/" element={<Home />} />
         <Route path="/RewildingRestoration/projects" element={<ProjectsPage />} />
+        <Route path="/RewildingRestoration/projects/:id" element={<ProjectDetail />} />
         <Route path="/RewildingRestoration/about" element={<About />} />
         <Route path="/RewildingRestoration/contact" element={<Contact />} />
         <Route path="/RewildingRestoration/join" element={<Join />} />

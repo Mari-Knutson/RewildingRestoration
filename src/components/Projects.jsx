@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, ArrowRight } from 'lucide-react';
 import projects from '../data/projects.json';
 
 export default function Projects() {
@@ -22,11 +23,13 @@ export default function Projects() {
                             className="group relative overflow-hidden rounded-lg bg-white shadow-lg transition-transform hover:-translate-y-1"
                         >
                             <div className="h-48 overflow-hidden">
-                                <img
-                                    src={project.image}
-                                    alt={project.title}
-                                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                />
+                                <Link to={`/RewildingRestoration/projects/${project.id}`}>
+                                    <img
+                                        src={project.image}
+                                        alt={project.title}
+                                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    />
+                                </Link>
                             </div>
 
                             <div className="p-6">
@@ -38,15 +41,17 @@ export default function Projects() {
                                     ))}
                                 </div>
 
-                                <h3 className="mb-2 text-xl font-bold text-nature-dark">{project.title}</h3>
+                                <Link to={`/RewildingRestoration/projects/${project.id}`} className="block hover:underline hover:text-nature-accent transition-colors">
+                                    <h3 className="mb-2 text-xl font-bold text-nature-dark">{project.title}</h3>
+                                </Link>
                                 <p className="mb-4 text-nature-stone">{project.description}</p>
 
-                                <a
-                                    href={project.link}
+                                <Link
+                                    to={`/RewildingRestoration/projects/${project.id}`}
                                     className="inline-flex items-center text-nature-accent hover:text-nature-dark transition-colors"
                                 >
-                                    View Project <ExternalLink size={16} className="ml-1" />
-                                </a>
+                                    View Details <ArrowRight size={16} className="ml-1" />
+                                </Link>
                             </div>
                         </motion.div>
                     ))}
