@@ -29,9 +29,9 @@ export default function Navbar() {
         >
             <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
                 {/* Logo / Brand */}
-                <a href="#" className="flex items-center gap-2 text-nature-light hover:text-nature-accent transition-colors">
-                    <Leaf className="h-6 w-6" />
-                    <span className="text-xl font-bold font-serif tracking-wide">Rewilding Restoration</span>
+                <a href="#" className="flex items-center gap-3 text-nature-light hover:text-nature-accent transition-colors">
+                    <img src="/RewildingRestoration/logo.png" alt="Rewilding Logo" className="h-10 w-10 object-contain drop-shadow-md" />
+                    <span className="text-xl font-bold font-serif tracking-wide shadow-black drop-shadow-sm">Rewilding Restoration</span>
                 </a>
 
                 {/* Desktop Menu */}
