@@ -25,18 +25,27 @@ export default function Contact() {
                             MariKnutson19@gmail.com
                         </a>
                     </div>
-                    <form className="space-y-6" action="mailto:MariKnutson19@gmail.com" method="POST" encType="text/plain">
+                    <form className="space-y-6" action="https://formsubmit.co/MariKnutson19@gmail.com" method="POST">
+                        {/* Honeypot to prevent spam */}
+                        <input type="text" name="_honey" style={{ display: 'none' }} />
+
+                        {/* Disable Captcha for cleaner experience (optional) */}
+                        <input type="hidden" name="_captcha" value="false" />
+
+                        {/* Success Page redirect (optional, stays on page if not set or can point to separate page) */}
+                        <input type="hidden" name="_next" value="https://mariknutson.github.io/RewildingRestoration/" />
+
                         <div>
                             <label className="block text-sm font-bold mb-2">Name</label>
-                            <input type="text" name="name" className="w-full p-3 bg-white border border-nature-dark/20 rounded-lg focus:outline-none focus:border-nature-moss" />
+                            <input type="text" name="name" required className="w-full p-3 bg-white border border-nature-dark/20 rounded-lg focus:outline-none focus:border-nature-moss" />
                         </div>
                         <div>
                             <label className="block text-sm font-bold mb-2">Email</label>
-                            <input type="email" name="email" className="w-full p-3 bg-white border border-nature-dark/20 rounded-lg focus:outline-none focus:border-nature-moss" />
+                            <input type="email" name="email" required className="w-full p-3 bg-white border border-nature-dark/20 rounded-lg focus:outline-none focus:border-nature-moss" />
                         </div>
                         <div>
                             <label className="block text-sm font-bold mb-2">Message</label>
-                            <textarea rows="4" name="message" className="w-full p-3 bg-white border border-nature-dark/20 rounded-lg focus:outline-none focus:border-nature-moss"></textarea>
+                            <textarea rows="4" name="message" required className="w-full p-3 bg-white border border-nature-dark/20 rounded-lg focus:outline-none focus:border-nature-moss"></textarea>
                         </div>
                         <button className="bg-nature-dark text-nature-light px-8 py-3 rounded-full font-bold uppercase tracking-wide hover:bg-nature-moss transition-colors">
                             Send Message
