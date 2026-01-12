@@ -8,7 +8,7 @@
             "Environmental Analysis",
             "Mapping"
         ],
-        "image": "https://images.unsplash.com/photo-1569426210214-41d3e86c0c1b?q=80&w=2070&auto=format&fit=crop",
+        "image": "/RewildingRestoration/images/projects/1-sammamish.png",
         "link": "#"
     },
     {
@@ -20,7 +20,7 @@
             "Data Analysis",
             "Field Work"
         ],
-        "image": "https://images.unsplash.com/photo-1535083783855-76ae62b2914e?q=80&w=1935&auto=format&fit=crop",
+        "image": "/RewildingRestoration/images/projects/2-wildlife.png",
         "link": "#"
     },
     {
@@ -32,7 +32,7 @@
             "Feasibility",
             "Reporting"
         ],
-        "image": "https://images.unsplash.com/photo-1440342359726-5918301ec2bf?q=80&w=2069&auto=format&fit=crop",
+        "image": "/RewildingRestoration/images/projects/3-iride.png",
         "link": "#"
     }
 ]
