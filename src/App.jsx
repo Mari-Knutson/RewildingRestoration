@@ -22,12 +22,12 @@ function App() {
   return (
     <div className="min-h-screen bg-nature-light">
       <Routes>
-        <Route path="/RewildingRestoration/" element={<Home />} />
-        <Route path="/RewildingRestoration/projects" element={<ProjectsPage />} />
-        <Route path="/RewildingRestoration/projects/:id" element={<ProjectDetail />} />
-        <Route path="/RewildingRestoration/about" element={<About />} />
-        <Route path="/RewildingRestoration/contact" element={<Contact />} />
-        <Route path="/RewildingRestoration/join" element={<Join />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/projects/:id" element={<ProjectDetail />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/join" element={<Join />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </div>
