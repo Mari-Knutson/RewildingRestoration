@@ -21,22 +21,22 @@ export default function Contact() {
                             Interested in collaborating or learning more about our projects?
                             We'd love to hear from you.
                         </p>
-                        <a href="mailto:hello@rewildingrestoration.com" className="text-nature-accent font-bold text-lg hover:underline">
-                            hello@rewildingrestoration.com
+                        <a href="mailto:MariKnutson19@gmail.com" className="text-nature-accent font-bold text-lg hover:underline">
+                            MariKnutson19@gmail.com
                         </a>
                     </div>
-                    <form className="space-y-6">
+                    <form className="space-y-6" action="mailto:MariKnutson19@gmail.com" method="POST" encType="text/plain">
                         <div>
                             <label className="block text-sm font-bold mb-2">Name</label>
-                            <input type="text" className="w-full p-3 bg-white border border-nature-dark/20 rounded-lg focus:outline-none focus:border-nature-moss" />
+                            <input type="text" name="name" className="w-full p-3 bg-white border border-nature-dark/20 rounded-lg focus:outline-none focus:border-nature-moss" />
                         </div>
                         <div>
                             <label className="block text-sm font-bold mb-2">Email</label>
-                            <input type="email" className="w-full p-3 bg-white border border-nature-dark/20 rounded-lg focus:outline-none focus:border-nature-moss" />
+                            <input type="email" name="email" className="w-full p-3 bg-white border border-nature-dark/20 rounded-lg focus:outline-none focus:border-nature-moss" />
                         </div>
                         <div>
                             <label className="block text-sm font-bold mb-2">Message</label>
-                            <textarea rows="4" className="w-full p-3 bg-white border border-nature-dark/20 rounded-lg focus:outline-none focus:border-nature-moss"></textarea>
+                            <textarea rows="4" name="message" className="w-full p-3 bg-white border border-nature-dark/20 rounded-lg focus:outline-none focus:border-nature-moss"></textarea>
                         </div>
                         <button className="bg-nature-dark text-nature-light px-8 py-3 rounded-full font-bold uppercase tracking-wide hover:bg-nature-moss transition-colors">
                             Send Message
