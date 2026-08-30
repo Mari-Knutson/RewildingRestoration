@@ -1,16 +1,17 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/jpeg" href="/RewildingRestoration/logo.jpg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rewilding Restoration</title>
+  <title>Environmental Intelligence</title>
+  <script>
+    const base = '/RewildingRestoration/';
+    const route = window.location.pathname.startsWith(base)
+      ? window.location.pathname.slice(base.length - 1)
+      : '/';
+    const query = window.location.search ? '&q=' + encodeURIComponent(window.location.search.slice(1)) : '';
+    window.location.replace(base + '?route=' + encodeURIComponent(route + window.location.hash) + query);
+  </script>
 </head>
-
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-</body>
-
+<body></body>
 </html>
