@@ -22,7 +22,7 @@ function Header(){
   return <header className="topbar"><Link to="/" className="wordmark">Environmental Intelligence</Link><button className="menu" onClick={()=>setOpen(!open)}>{open?<X/>:<Menu/>}</button><nav className={open?'nav open':'nav'}>{nav.map(([to,label])=><NavLink key={to} to={to}>{label}</NavLink>)}<Link className="pill-button" to="/contact">Start a project</Link></nav></header>
 }
 
-function Footer(){ return <footer><div><strong>Environmental Intelligence</strong><p>Source-water protection • watershed resilience • environmental decision support</p></div><div><Link to="/source-water">Source Water</Link><Link to="/services">Services</Link><Link to="/applications">Work</Link><Link to="/about">About</Link><Link to="/contact">Contact</Link></div><small>Connect the information. Prioritize the consequence. Protect the water.</small></footer> }
+function Footer(){ return <footer><div><strong>Environmental Intelligence | RewildingRestoration</strong><p>Source-Water Protection • Watershed Resilience • Environmental Decision Support</p><p className="footer-site">https://mari-knutson.github.io/RewildingRestoration/</p></div><div><Link to="/source-water">Source Water</Link><Link to="/services">Services</Link><Link to="/applications">Work</Link><Link to="/about">About</Link><Link to="/contact">Contact</Link></div><small>Environmental Intelligence is a DBA of RewildingRestoration. Connect the information. Prioritize the consequence. Protect the water.</small></footer> }
 
 function Layout({children}){ return <><Header/><main>{children}</main><Footer/></> }
 
