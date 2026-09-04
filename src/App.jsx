@@ -9,6 +9,7 @@ const nav = [
   ['/', 'Home'],
   ['/source-water', 'Source Water'],
   ['/services', 'Services'],
+  ['/system', 'Our System'],
   ['/applications', 'Work'],
   ['/about', 'About'],
   ['/contact', 'Contact'],
@@ -45,6 +46,8 @@ const simplePages = {
     eyebrow: 'Source-Water Protection',
     title: 'The watershed is water infrastructure.',
     intro: 'Reliable water begins with the landscape that collects, stores, filters, and delivers it.',
+    heroImage: 'images/heroes/source-water.webp',
+    heroClass: 'source-water-hero',
     description: 'Source-water protection and connected watershed risk analysis by Environmental Intelligence and RewildingRestoration.',
     body: [
       {
@@ -78,6 +81,8 @@ const simplePages = {
     eyebrow: 'Services',
     title: 'Environmental analysis built around decisions.',
     intro: 'Focused services for utilities, governments, land managers, and environmental partners.',
+    heroImage: 'images/heroes/services-field.webp',
+    heroClass: 'services-hero',
     description: 'Source-water protection, wildfire resilience, GIS, land-use intelligence, and implementation support.',
     body: [
       {
@@ -114,10 +119,38 @@ const simplePages = {
       },
     ],
   },
+  '/system': {
+    eyebrow: 'Environmental Intelligence System',
+    title: 'One connected picture of the operating environment.',
+    intro: 'Bring environmental conditions, infrastructure, field knowledge, and institutional responsibility into one decision framework.',
+    heroImage: 'images/heroes/system-ridgeline.webp',
+    heroClass: 'system-hero',
+    description: 'A connected environmental intelligence system for observing conditions, understanding consequence, prioritizing action, and verifying results.',
+    body: [
+      {
+        title: 'Observe the operating environment',
+        text: 'Bring environmental risk signals, field knowledge, infrastructure exposure, land-use change, and existing specialist information into a shared operating picture.',
+      },
+      {
+        title: 'Connect cause to consequence',
+        text: 'Relate upstream conditions to pathways, downstream assets, operational constraints, and institutional responsibility so decision-makers can see what a change could affect.',
+      },
+      {
+        title: 'Prioritize action',
+        text: 'Rank places, assets, and interventions by protective value, urgency, feasibility, and consequence rather than treating every mapped condition as equally important.',
+      },
+      {
+        title: 'Coordinate and verify',
+        text: 'Translate priorities into ownership, timing, implementation, and evidence that the completed action reduced vulnerability or protected watershed function.',
+      },
+    ],
+  },
   '/about': {
     eyebrow: 'About',
     title: 'Environmental experience connected to better decisions.',
     intro: 'Environmental Intelligence is the source-water protection and environmental decision-support practice of RewildingRestoration.',
+    heroImage: 'images/heroes/about-field.webp',
+    heroClass: 'about-hero',
     description: 'About Environmental Intelligence and RewildingRestoration.',
     body: [
       {
@@ -239,7 +272,7 @@ function Footer() {
       <p>Source-Water Protection • Watershed Resilience • Environmental Decision Support</p>
       <a className="footer-site" href={siteUrl}>https://mari-knutson.github.io/RewildingRestoration/</a>
     </div>
-    <div><Link to="/source-water">Source Water</Link><Link to="/services">Services</Link><Link to="/applications">Work</Link><Link to="/about">About</Link><Link to="/contact">Contact</Link></div>
+    <div><Link to="/source-water">Source Water</Link><Link to="/services">Services</Link><Link to="/system">Our System</Link><Link to="/applications">Work</Link><Link to="/about">About</Link><Link to="/contact">Contact</Link></div>
     <small>Environmental Intelligence is the environmental decision-support practice of RewildingRestoration. Connect the information. Prioritize the consequence. Protect the water.</small>
   </footer>;
 }
@@ -285,10 +318,18 @@ function Home() {
   </Layout>;
 }
 
+function PageHero({ className, image, eyebrow, title, intro }) {
+  return <section className={`page-hero ${className}`}>
+    <img className="page-hero-image" src={`${base}${image}`} alt="" aria-hidden="true" />
+    <div className="page-hero-shade" />
+    <div className="page-hero-inner"><div className="kicker">{eyebrow}</div><h1>{title}</h1><p>{intro}</p></div>
+  </section>;
+}
+
 function SimplePage({ data }) {
   return <Layout>
     <PageMeta title={`${data.eyebrow} | Environmental Intelligence | RewildingRestoration`} description={data.description} />
-    <section className="plain-hero"><div className="kicker">{data.eyebrow}</div><h1>{data.title}</h1><p>{data.intro}</p></section>
+    <PageHero className={data.heroClass} image={data.heroImage} eyebrow={data.eyebrow} title={data.title} intro={data.intro} />
     <section className="plain-list">{data.body.map((item, i) => <article key={item.title} className={item.image ? 'has-media' : ''}><span>0{i + 1}</span><div><h2>{item.title}</h2><p>{item.text}</p></div>{item.image && <figure className={item.fit || ''}><img src={`${base}${item.image}`} alt={item.alt} loading="lazy" /></figure>}</article>)}</section>
     <section className="closing"><h2>Connect the information. Prioritize the consequence. Protect the water.</h2><Link className="dark-button" to="/contact">Start a project <ArrowRight size={18} /></Link></section>
   </Layout>;
@@ -315,7 +356,7 @@ function CaseStudy({ study }) {
 function WorkPage() {
   return <Layout>
     <PageMeta title="Selected Work | Environmental Intelligence | RewildingRestoration" description="Selected Cedar River, Loree Estates wildlife-corridor, and South King County environmental intelligence work." />
-    <section className="plain-hero work-hero"><div className="kicker">Selected work</div><h1>Real places. Connected evidence. Clearer decisions.</h1><p>Selected maps, field evidence, findings, and recommendations from source-water, wildlife-connectivity, and land-use reviews. Complete technical reports remain private.</p></section>
+    <PageHero className="applications-hero" image="images/heroes/applications-cedar.webp" eyebrow="Selected work" title="Real places. Connected evidence. Clearer decisions." intro="Selected maps, field evidence, findings, and recommendations from source-water, wildlife-connectivity, and land-use reviews. Complete technical reports remain private." />
     <section className="case-studies">{caseStudies.map((study) => <CaseStudy key={study.id} study={study} />)}</section>
     <section className="closing"><h2>Have a landscape question that needs a connected evidence base?</h2><Link className="dark-button" to="/contact">Discuss the decision <ArrowRight size={18} /></Link></section>
   </Layout>;
@@ -324,7 +365,7 @@ function WorkPage() {
 function Contact() {
   return <Layout>
     <PageMeta title="Contact | Environmental Intelligence | RewildingRestoration" description="Discuss a source-water, watershed resilience, GIS, or environmental decision-support project." />
-    <section className="plain-hero"><div className="kicker">Contact</div><h1>Discuss a source-water or environmental intelligence project.</h1><p>Tell us the watershed, landscape, or management question your organization needs to resolve.</p></section>
+    <PageHero className="contact-hero" image="images/heroes/contact-watershed.webp" eyebrow="Contact" title="Discuss a source-water or environmental intelligence project." intro="Tell us the watershed, landscape, or management question your organization needs to resolve." />
     <section className="contact-simple"><div><h2>Environmental Intelligence | RewildingRestoration</h2><p>Source-water protection • watershed resilience • GIS • land-use intelligence • implementation support</p><a href="mailto:MariKnutson19@gmail.com">MariKnutson19@gmail.com</a></div><form action="https://formsubmit.co/MariKnutson19@gmail.com" method="POST"><input type="hidden" name="_captcha" value="false" /><input type="hidden" name="_subject" value="Environmental Intelligence | RewildingRestoration website inquiry" /><input type="hidden" name="_next" value={siteUrl} /><label>Name<input name="name" required /></label><label>Organization<input name="organization" /></label><label>Email<input type="email" name="email" required /></label><label>Project location / watershed<input name="location" /></label><label>Message<textarea rows="6" name="message" required /></label><button className="dark-button" type="submit">Send inquiry <ArrowRight size={18} /></button></form></section>
   </Layout>;
 }
